@@ -1,0 +1,53 @@
+<!-- @fadeIn is an animation made in the xxxxx.component.ts that matches this xxxxxx.component.html -->
+<div class="home-container" @fadeIn>
+  <div class="introduction">
+    <h1 class="title">Welcome!</h1>
+    <p class="tagline">
+      I'm a professional and empathetic leader with extensive experience for +25
+      years. My expertise is my ability to successfully drive and manage
+      large-scale and effective transformational change, ensuring sustained
+      improvement and growth within organizations and more...
+    </p>
+  </div>
+
+  <!-- Testimonials Carousel, had to fickel with it, so see the function to make it work in the home.component.ts file-->
+  <div
+    class="carousel-container"
+    (mouseenter)="stopAutoplay()"
+    (mouseleave)="startAutoplay()"
+  >
+    <p-carousel
+      aria-label="testimonials Carousel"
+      [value]="testimonials"
+      [circular]="true"
+      [numVisible]="1"
+      [numScroll]="1"
+      [autoplayInterval]="5000"
+    >
+      <ng-template let-testimonial pTemplate="item">
+        <div class="testimonial-item">
+          <p>{{ testimonial.content }}</p>
+          <p>
+            -
+            <strong>
+              <a
+                aria-label="testimonial items"
+                [href]="testimonial.authorLink"
+                target="_blank"
+              >
+                {{ testimonial.author }}
+              </a>
+            </strong>
+          </p>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="quick-links">
+    <a aria-label="resume button" routerLink="/resume">Resume</a>
+    <a aria-label="skills overview button" routerLink="/skills-overview"
+      >Skills overview</a
+    >
+    <a aria-label="contact button" routerLink="/contact">Contact</a>
+  </div>
+</div>

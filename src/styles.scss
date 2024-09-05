@@ -1,1 +1,35 @@
+@import 'colors';
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Example of applying secondary color */
+.button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+img {
+  max-width: 100%; /* Ensure images scale with the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* colors: 
+background: #242333
+text: #fffff
+call to action: #01b0d3
+
+*/

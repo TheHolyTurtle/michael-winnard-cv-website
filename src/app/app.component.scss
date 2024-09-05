@@ -1,0 +1,205 @@
+/* Ensure the body, html, and app-root take the full height of the viewport */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* app-root needs to take up the remaining space between the header and the footer */
+app-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px; /* Adjust to match footer height */
+}
+
+/* Ensure that the router-outlet and main content area grows to fill available space */
+main {
+  flex: 1;
+}
+
+// The navbar and hamburger menu
+.navbar {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-top: 25px;
+  background-color: var(--background-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 10px;
+  align-items: center;
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: background-color 0.2s ease;
+
+  /*
+  The .navbar-links container uses Flexbox to align the links in a row on larger screens. 
+  On smaller screens, it switches to a column layout (flex-direction: column), stacking the links vertically.
+  */
+  .navbar-links {
+    display: flex;
+    margin-top: 25px;
+    flex-direction: row;
+    justify-content: center;
+
+    a {
+      border-radius: 25px;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
+      color: var(--primary-text-color);
+      padding: 14px 20px;
+      font-size: 1.5rem;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.2s ease, background-color 0.2s ease-in, color 0.2s ease-in;
+
+      &:hover {
+        background-color: var(--button-highlight-color);
+        color: #fff;
+        transform: scale(1.05); /* Slightly expand the button on hover */
+        
+      }
+
+      &.active {
+        background-color: var(--button-highlight-color);
+        color: #fff;
+        transform: scale(0.95); /* Slightly shrink the button when clicked */
+        transition: transform 0.1s ease;
+        text-shadow: 1px 0 0 #000;
+      }
+    }
+  }
+
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+
+    div {
+      width: 35px;
+      height: 4px;
+      background-color: var(--primary-text-color);
+      margin: 6px 0;
+      transition: 0.5s; /* Smooth transition for the bars */
+    }
+
+    /* Rotate and transform the bars when the menu is open */
+    &.change .bar1 {
+      transform: rotate(-45deg) translate(-8px, 5px);
+    }
+
+    &.change .bar2 {
+      opacity: 0; /* Hide the middle bar */
+    }
+
+    &.change .bar3 {
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+
+  /* Responsive Styles */
+  /*
+  @media (max-width: 768px): The .hamburger-menu is displayed, and the .navbar-links are initially hidden. 
+  When the hamburger menu is clicked, the links are shown using the open class.
+  */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center; /* Center the hamburger menu container horizontally */
+
+    .hamburger-menu {
+      display: block; /* Show hamburger on mobile */
+      margin: auto; 
+    }
+
+    .navbar-links {
+      display: none; /* Hide links initially */
+      flex-direction: column;
+      width: 100%;
+      align-items: center; /* Center the links horizontally */
+
+      &.open {
+        display: flex; /* Show links when menu is open */
+      }
+
+      a {
+        padding: 10px;
+        width: auto; /* Make links take their natural width */
+        justify-content: center;
+        text-align: center; /* Center the text within the links */
+      }
+    }
+  }
+
+  /*
+  @media (max-width: 480px): Further adjusts padding and font size for very small screens.
+  */
+  @media (max-width: 480px) {
+    .navbar-links a {
+      padding: 8px;
+      font-size: 25px; /* Adjust font size for small screens */
+    }
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  margin-top: 25px;
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+
+      a {
+        color: var(--primary-text-color);
+        text-decoration: none;
+        font-size: 32px; /* Increase the font size for larger links */
+        padding: 6px 12px;
+        border-radius: 25px;
+        transition: background-color 0.2s ease;
+        transition: transform 0.2s ease, background-color 0.2s ease-in,
+          color 0.2s ease-in;
+
+        &:hover {
+          background-color: var(--button-highlight-color);
+          color: var(--button-text-color);
+          transform: scale(1.05); /* Slightly expand the button on hover */
+          text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+        }
+        &.active {
+          background-color: var(--button-highlight-color);
+          color: #fff;
+          transform: scale(0.95); /* Slightly shrink the button when clicked */
+          transition: transform 0.1s ease;
+          text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+        }
+
+        i {
+          font-size: 25px; /* Adjust the size of the icons */
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  margin: auto;
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  border-radius: 25px;
+  max-width: 1200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--primary-text-color);
+  width: 100%;
+}
+
+.introduction {
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px;
+  background-color: var(--background-color);
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 20px;
+  color: var(--primary-text-color);
+  text-align: left;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 375px;
+  height: auto;
+
+  // The ::ng-deep directive allows us to style elements inside Angular components with encapsulated styles,
+  // which is necessary for styling elements within the PrimeNG carousel component.
+  ::ng-deep .p-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Customize the size of carousel navigation arrows */
+  ::ng-deep .p-carousel-prev,
+  ::ng-deep .p-carousel-next {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    color: var(--primary-text-color);
+  }
+
+  /* Customize the color of pagination indicators */
+  ::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    width: 10px;
+    height: 10px;
+
+    &:hover {
+      background-color: var(--button-highlight-color);
+    }
+  }
+
+  /* Customize the color of the active indicator */
+  ::ng-deep
+    .p-carousel
+    .p-carousel-indicators
+    .p-carousel-indicator.p-highlight
+    button {
+    background-color: var(--button-color);
+    &:hover {
+      background-color: var(--button-highlight-color);
+    }
+  }
+}
+
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  padding: 15px;
+  color: var(--primary-text-color);
+  text-align: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  margin: auto;
+
+
+  p {
+    margin: 10px;
+    font-size: 1.1rem;
+  }
+
+  a {
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    padding: 3px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease-in, color 0.2s ease-in;
+    
+    &:hover {
+      background-color: var(--button-highlight-color);
+      color: var(--button-text-color);
+      transform: scale(1.05); /* Slightly expand the button on hover */
+    }
+
+    &.active {
+      background-color: var(--button-highlight-color);
+      color: #fff;
+      transform: scale(0.95); /* Slightly shrink the button when clicked */
+      transition: transform 0.1s ease;
+    }
+  }
+}
+
+.quick-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  a {
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease-in, color 0.2s ease-in;
+
+
+    &:hover {
+      background-color: var(--button-highlight-color);
+      color: var(--secondary-color);
+      transform: scale(1.05); /* Slightly expand the button on hover */
+    }
+
+    &.active {
+      background-color: var(--button-highlight-color);
+      transform: scale(0.95); /* Slightly shrink the button when clicked */
+      transition: transform 0.1s ease;
+    }
+  }
+}

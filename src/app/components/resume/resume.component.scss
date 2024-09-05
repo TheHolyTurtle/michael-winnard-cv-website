@@ -1,0 +1,113 @@
+.resume-container {
+  // background-color: var(--primary-color);
+  padding: 40px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--primary-text-color);
+
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--primary-text-color-light);
+  }
+
+  .resume-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .resume-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 15px 25px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--primary-text-color);
+      background-color: var(--button-color);
+      border-radius: 25px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: (var(--button-highlight-color));
+        color: var(--button-text-color);
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+      }
+    }
+
+    .english {
+      background-color: var(
+        --background-color
+      ); /* Blue color for English version */
+    }
+
+    .danish {
+      background-color: var(
+        --background-color
+      ); /* Red color for Danish version */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 30px 15px;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .resume-buttons .resume-button {
+      font-size: 1.5rem;
+      padding: 12px 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-container {
+    padding: 20px 10px;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .resume-buttons {
+      flex-direction: column;
+      gap: 15px;
+
+      .resume-button {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        padding: 10px 15px;
+        width: 100%; /* Ensure buttons are full-width on small screens */
+      }
+    }
+  }
+}

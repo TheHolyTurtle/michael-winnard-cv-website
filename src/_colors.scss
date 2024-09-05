@@ -1,0 +1,113 @@
+/* Define your color palette */
+// $primary-color: #3498db;  /* Example Primary Color */
+// $secondary-color: #2ecc71; /* Example Secondary Color */
+// $background-color: #f4f4f4; /* Background Color */
+// $text-color: #333; /* Text Color */
+// TEST 1
+
+
+// Primary Color 
+$primary-color: #fff;   
+
+// Secondary Color
+$secondary-color: #F7F8FD;  
+
+// Background Color
+$background-color: #fff;
+
+// Text Color
+$primary-text-color: #0000bb;
+
+$secondary-text-color: #ffffff;
+
+$button-text-color: #ffffff;
+
+$button-color: #ED021A;
+
+$button-highlight-color: red;
+
+/* Optional: Define shades or variations */
+$primary-dark: darken($primary-color, 10%);
+$primary-light: lighten($primary-color, 10%);
+
+/* Export colors as CSS variables */
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --background-color: #{$background-color};
+
+  --primary-text-color: #{$primary-text-color};
+  --secondary-text-color: #{$secondary-text-color};
+
+  --button-text-color: #{$button-text-color};
+  --button-color: #{$button-color};
+  --button-highlight-color: #{$button-highlight-color};
+
+}
+
+
+/* 
+Text: #1c36bb
+dark tekst: #2e2e30
+background: #fff
+background on hover: e5e5eb
+button: #ED021A
+highlight?: #3898EC
+when multiple components show on one site: transparent
+some headings (6): #838386
+
+*/
+
+
+/* TEMP
+// Example Primary Color 
+$primary-color: #393E46;   
+
+// Example Secondary Color
+$secondary-color: #00ADB5;  
+
+// Background Color
+$background-color: #222831;  
+
+// Text Color
+$text-color: #EEEEEE;   
+*/
+
+
+//  Old color scheme:
+/*
+$primary-color: #3F4E4F;   
+
+// Example Secondary Color
+$secondary-color: #A27B5C;  
+
+// Background Color
+$background-color: #2C3639;  
+
+// Text Color
+$text-color: #DCD7C9;   
+*/
+
+
+/* TO BE DELETED, TEMP, just like the colors here 
+navbar {
+  background-color: #0e2c40;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background-color: #1a4a5a;
+    }
+
+    &.active {
+      background-color: #148d8d;
+    }
+  }
+*/

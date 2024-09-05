@@ -1,0 +1,204 @@
+// Main container for the work experience section
+.work-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1920px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+
+  h1 {
+    font-size: 3.5rem;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  // Container for all work experience blocks
+  .work-experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 30px; /* Space between work experience blocks */
+  }
+
+  // Each individual work experience block
+  .work-experience {
+    position: relative;
+    border-radius: 25px;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%; /* Ensure the block doesn't overflow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-size: cover; /* Ensure the background image covers the entire block */
+    background-position: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    height: auto; /* Remove fixed height, allow content to define height */
+    gap: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 25px;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    // Content section for each experience (text)
+    .work-experience-content {
+      position: relative;
+      z-index: 1; /* Ensure content appears above the overlay */
+      color: var(--primary-text-color); /* Ensure text is visible */
+      text-align: left; /* Center the content */
+      flex-grow: 1; /* Allow content to grow and fill available space */
+      gap: 30px;
+      background-color: var(--secondary-color);
+      border-radius: 25px;
+
+      // titles
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: var(--primary-text-color);
+      }
+
+      // Company and time
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: var(--primary-text-color);
+      }
+
+      // introduction
+      p {
+        font-size: 1.5rem;
+        color: var(--primary-text-color);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      // key respons & skills titles
+      h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: var(--primary-text-color);
+      }
+
+      // key responibilities text container
+      ul {
+        list-style-type: none; /* Remove bullet points */
+        padding-left: 0;
+        margin: 0;
+        // key responibilities text
+        li {
+          margin-bottom: 10px;
+          font-size: 1.25rem;
+          color: var(--primary-text-color);
+        }
+      }
+
+      // Skill tags styling
+      .skills {
+        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left; /* Center the skill tags */
+
+        .skill-tag {
+          background-color: rgba(0, 0, 0, 0.1);
+          color: var(--primary-text-color);
+          padding: 5px 10px;
+          border-radius: 20px;
+          font-size: 1.25rem;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          display: inline-block;
+          transition: background-color 0.2s ease;
+        }
+      }
+    }
+  }
+  // Scroll to top button
+  .scroll-to-top {
+    margin-top: 45px;
+    cursor: pointer;
+    width: 240px;
+    color: var(--primary-text-color);
+    padding: 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease-in,
+      color 0.2s ease-in;
+
+    &:hover {
+      background-color: var(--button-highlight-color);
+      color: var(--button-text-color);
+      transform: scale(1.05); /* Slightly expand the button on hover */
+      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    }
+
+    &.active {
+      background-color: var(--button-highlight-color);
+      color: #fff;
+      transform: scale(0.95); /* Slightly shrink the button when clicked */
+      transition: transform 0.1s ease;
+      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    }
+  }
+}
+
+// Responsive styling to ensure proper layout on small screens
+@media (max-width: 768px) {
+  .work-experience {
+    padding: 15px;
+  }
+
+  .work-experience-content {
+    padding: 15px;
+    h2 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+    }
+    p {
+      font-size: 0.95rem;
+    }
+    h4 {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .work-experience {
+    padding: 10px;
+  }
+
+  .work-experience-content {
+    padding: 10px;
+    h2 {
+      font-size: 1.3rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}

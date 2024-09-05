@@ -1,0 +1,34 @@
+<div class="work-container" @fadeIn>
+  <h1>My Work Experience</h1>
+
+  <div class="work-experience-container">
+    <!-- Loop through each work experience and display it -->
+    <div
+      class="work-experience"
+      *ngFor="let work of workExperiences; let i = index"
+    >
+
+      <!-- Content Section -->
+      <div class="work-experience-content">
+        <h2>{{ work.title }}</h2>
+        <h3>{{ work.company }} | {{ work.years }}</h3>
+        <p>{{ work.description }}</p>
+
+        <h4>Key Responsibilities</h4>
+        <ul>
+          <li *ngFor="let responsibility of work.responsibilities">
+            {{ responsibility }}
+          </li>
+        </ul>
+
+        <h4>Skills & Competencies</h4>
+        <div class="skills">
+          <span *ngFor="let skill of work.skills" class="skill-tag">{{
+            skill
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p aria-label="scroll to top button" (click)="scrollToTop()" class="scroll-to-top">Scroll to top</p>
+</div>
