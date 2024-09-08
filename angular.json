@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio-website": {
+    "michael-winnard-cv-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio-website",
+            "outputPath": "dist/michael-winnard-cv-website",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portfolio-website:build"
+            "browserTarget": "michael-winnard-cv-website:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portfolio-website:build:production"
+              "browserTarget": "michael-winnard-cv-website:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio-website:build"
+            "browserTarget": "michael-winnard-cv-website:build"
           }
         },
         "test": {
@@ -106,16 +106,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "portfolio-website:serve"
+            "devServerTarget": "michael-winnard-cv-website:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "portfolio-website:serve:production"
+              "devServerTarget": "michael-winnard-cv-website:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "portfolio-website"
+  "defaultProject": "michael-winnard-cv-website"
 }
